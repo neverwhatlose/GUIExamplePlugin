@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
     //papermc
-    compileOnly("io.papermc.paper:paper-api:1.21-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:${libs.versions.papermc.get()}")
     //junit
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
@@ -23,7 +23,9 @@ dependencies {
     implementation("org.slf4j:slf4j-api:${libs.versions.slf4j.get()}")
     implementation("org.slf4j:slf4j-simple:${libs.versions.slf4j.get()}")
     //cloud paper
-    implementation("cloud.commandframework:cloud-paper:1.8.4")
+    implementation("cloud.commandframework:cloud-paper:${libs.versions.cloudframework.get()}")
+    //minimessage
+    implementation("net.kyori:adventure-api:${libs.versions.minimessage.get()}")
 }
 
 tasks.test {

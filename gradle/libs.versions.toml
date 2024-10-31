@@ -1,4 +1,5 @@
 [versions]
 slf4j = '2.0.16'
-cloud-framework = '1.8.4'
-paper-api = '1.21-R0.1-SNAPSHOT'
+cloudframework = '1.8.4'
+papermc = '1.21-R0.1-SNAPSHOT'
+minimessage = '4.17.0'
