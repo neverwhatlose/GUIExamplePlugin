@@ -1,0 +1,4 @@
+[versions]
+slf4j = '2.0.16'
+cloud-framework = '1.8.4'
+paper-api = '1.21-R0.1-SNAPSHOT'
