@@ -49,10 +49,14 @@ public class GUI {
     public void showGUI() {
         this.owner.openInventory(this.inventory);
         this.owner.setMetadata("gui", new FixedMetadataValue(plugin, true));
+
+        System.out.println("gui showed");
     }
 
     public void closeGUI() {
         this.owner.removeMetadata("gui", plugin);
+
+        System.out.println("gui closed");
     }
 
     public Inventory getInventory() {

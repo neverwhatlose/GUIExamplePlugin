@@ -18,6 +18,8 @@ public class GUIManager {
 
     public void createGUI(@NotNull Component title, @Range(from = 1, to = 6) int rows, @NotNull Player player) {
         this.guis.put(player.getUniqueId(), new GUI(title, rows, player));
+
+        System.out.println("GUI created");
     }
 
     public @Nullable GUI getGUI(@NotNull UUID uuid) {
@@ -26,5 +28,7 @@ public class GUIManager {
 
     public void removeGUI(@NotNull UUID uuid) {
         this.guis.remove(uuid);
+
+        System.out.println("GUI removed from manager");
     }
 }
