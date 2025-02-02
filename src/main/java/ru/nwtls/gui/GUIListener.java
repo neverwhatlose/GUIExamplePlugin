@@ -21,7 +21,7 @@ public class GUIListener implements Listener {
 
         if (event.getClickedInventory() == null || gui == null || !player.hasMetadata("gui")) return;
         event.setCancelled(true);
-        player.sendMessage(MiniMessage.miniMessage().deserialize("<blue>Не кликай"));
+        player.sendMessage(MiniMessage.miniMessage().deserialize("<blue> Не кликай"));
     }
 
     @EventHandler
