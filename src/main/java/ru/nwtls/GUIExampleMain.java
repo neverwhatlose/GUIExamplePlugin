@@ -4,17 +4,17 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
-import ru.nwtls.gui.GUIListener;
-import ru.nwtls.gui.GUIManager;
-import ru.nwtls.listener.EventListener;
+import ru.nwtls.gui.GuiListener;
+import ru.nwtls.gui.GuiManager;
+import ru.nwtls.listener.PlayerJoinListener;
 
 public class GUIExampleMain extends JavaPlugin {
-    private final @NotNull GUIManager guiManager = new GUIManager();
+    private final @NotNull GuiManager guiManager = new GuiManager();
 
     @Override
     public void onEnable() {
-        Bukkit.getPluginManager().registerEvents(new GUIListener(), this);
-        Bukkit.getPluginManager().registerEvents(new EventListener(), this);
+        Bukkit.getPluginManager().registerEvents(new GuiListener(), this);
+        Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
     }
 
     @Override
@@ -26,7 +26,7 @@ public class GUIExampleMain extends JavaPlugin {
         return GUIExampleMain.getPlugin(GUIExampleMain.class);
     }
 
-    public @NotNull GUIManager getGUIManager() {
+    public @NotNull GuiManager getGUIManager() {
         return this.guiManager;
     }
 }

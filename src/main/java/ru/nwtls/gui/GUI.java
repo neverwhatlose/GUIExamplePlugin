@@ -15,7 +15,7 @@ import ru.nwtls.gui.button.ExecutableButton;
 
 import java.util.HashMap;
 
-public class GUI {
+public class Gui {
     private final Inventory inventory;
     private final Player owner;
     private final int rows;
@@ -24,7 +24,7 @@ public class GUI {
 
     private static final GUIExampleMain plugin = GUIExampleMain.getInstance();
 
-    protected GUI(@NotNull Component title, @Range(from = 1, to = 6) int rows, @NotNull Player player) {
+    protected Gui(@NotNull Component title, @Range(from = 1, to = 6) int rows, @NotNull Player player) {
         this.rows = rows;
         this.title = title;
         this.buttons = new HashMap<>();
@@ -33,20 +33,20 @@ public class GUI {
     }
 
     @Contract("_, _, _ -> this")
-    public @NotNull GUI setButton(@Range(from = 1, to = 6) int row, @Range(from = 1, to = 9) int column, @NotNull ExecutableButton button) {
+    public @NotNull Gui setButton(@Range(from = 1, to = 6) int row, @Range(from = 1, to = 9) int column, @NotNull ExecutableButton button) {
         this.inventory.setItem((row - 1) * 9 + column - 1, button.getItemStack());
         this.buttons.put((row - 1) * 9 + column - 1, button);
         return this;
     }
 
     @Contract("_, _, _ -> this")
-    public @NotNull GUI setButton(@Range(from = 1, to = 6) int row, @Range(from = 1, to = 9) int column, @NotNull DecorativeButton button) {
+    public @NotNull Gui setButton(@Range(from = 1, to = 6) int row, @Range(from = 1, to = 9) int column, @NotNull DecorativeButton button) {
         this.inventory.setItem((row - 1) * 9 + column - 1, button.getItemStack());
         this.buttons.put((row - 1) * 9 + column - 1, button);
         return this;
     }
 
-    public void showGUI() {
+    public void show() {
         this.owner.openInventory(this.inventory);
         this.owner.setMetadata("gui", new FixedMetadataValue(plugin, true));
 
